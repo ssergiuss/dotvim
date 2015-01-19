@@ -32,6 +32,9 @@ Bundle "scrooloose/nerdcommenter"
 " Autocompletion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
 
+" Git
+Bundle "tpope/vim-fugitive"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
