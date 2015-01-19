@@ -19,6 +19,9 @@ Plugin 'gmarik/Vundle.vim'
 Bundle "altercation/vim-colors-solarized"
 Bundle "bling/vim-airline"
 
+" Full path fuzzy file finder
+Bundle "ctrlpvim/ctrlp.vim"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -69,3 +72,6 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" Disable working path mode. Keep the first root.
+let g:ctrlp_working_path_mode = 0
