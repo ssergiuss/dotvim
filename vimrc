@@ -22,6 +22,9 @@ Bundle "bling/vim-airline"
 " Full path fuzzy file finder
 Bundle "ctrlpvim/ctrlp.vim"
 
+" TAB for autocompletion
+Bundle "ervandew/supertab"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
