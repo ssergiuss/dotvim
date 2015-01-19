@@ -29,6 +29,9 @@ Bundle "ervandew/supertab"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/nerdcommenter"
 
+" Autocompletion for quotes, parens, brackets, etc
+Bundle "Raimondi/delimitMate"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
