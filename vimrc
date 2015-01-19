@@ -11,6 +11,14 @@ call vundle#begin()
 " Let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+"
+" Bundles
+"
+
+" Themes and status/tabline
+Bundle "altercation/vim-colors-solarized"
+Bundle "bling/vim-airline"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -26,3 +34,10 @@ filetype plugin indent on    " required
 "
 " END VUNDLE CONFIGURATION
 "
+
+syntax enable
+set background=dark
+
+if has('gui_running')
+    colorscheme solarized
+endif
