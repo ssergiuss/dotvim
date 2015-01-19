@@ -38,6 +38,9 @@ Bundle "tpope/vim-fugitive"
 " Numbers
 Bundle "myusuf3/numbers.vim"
 
+" Improved incremental search
+Bundle "haya14busa/incsearch.vim"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -94,3 +97,8 @@ let g:ctrlp_working_path_mode = 0
 
 " NERDTree key bindings
 map <C-n> :NERDTreeToggle<CR>
+
+" Incremental search key bindings
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
