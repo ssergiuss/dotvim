@@ -35,6 +35,9 @@ Bundle "Raimondi/delimitMate"
 " Git
 Bundle "tpope/vim-fugitive"
 
+" Numbers
+Bundle "myusuf3/numbers.vim"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
