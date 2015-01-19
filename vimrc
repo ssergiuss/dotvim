@@ -25,6 +25,10 @@ Bundle "ctrlpvim/ctrlp.vim"
 " TAB for autocompletion
 Bundle "ervandew/supertab"
 
+" NERD bundles
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/nerdcommenter"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -78,3 +82,6 @@ noremap   <Right>  <NOP>
 
 " Disable working path mode. Keep the first root.
 let g:ctrlp_working_path_mode = 0
+
+" NERDTree key bindings
+map <C-n> :NERDTreeToggle<CR>
