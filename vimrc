@@ -41,6 +41,9 @@ Bundle "myusuf3/numbers.vim"
 " Improved incremental search
 Bundle "haya14busa/incsearch.vim"
 
+" Javascript
+Bundle "pangloss/vim-javascript"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
