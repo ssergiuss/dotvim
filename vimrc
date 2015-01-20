@@ -105,3 +105,9 @@ map <C-n> :NERDTreeToggle<CR>
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+" Remove trailing spaces
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Show lines that exceed 80 characters
+match ErrorMsg '\%80v.\+'
