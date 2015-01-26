@@ -111,3 +111,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Show lines that exceed 80 characters
 match ErrorMsg '\%80v.\+'
+
+" Remove vertical scrollbars
+:set guioptions-=l
+:set guioptions-=L
+:set guioptions-=r
+:set guioptions-=R
