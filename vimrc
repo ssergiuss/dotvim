@@ -117,3 +117,9 @@ match ErrorMsg '\%80v.\+'
 :set guioptions-=L
 :set guioptions-=r
 :set guioptions-=R
+
+" Switch between splits key bindings
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
