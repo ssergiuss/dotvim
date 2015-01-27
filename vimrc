@@ -110,13 +110,13 @@ map g/ <Plug>(incsearch-stay)
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Show lines that exceed 80 characters
-match ErrorMsg '\%80v.\+'
+match ErrorMsg '\%>80v.\+'
 
 " Remove vertical scrollbars
-:set guioptions-=l
-:set guioptions-=L
-:set guioptions-=r
-:set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
 
 " Switch between splits key bindings
 map <C-h> <C-w>h
@@ -125,4 +125,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Set search case insensitive
-:set ic
+set ic
+
+" Highlight the columns from 81 to 120
+execute 'set colorcolumn=' . join(range(81,120),',')
