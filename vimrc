@@ -46,6 +46,9 @@ Bundle "haya14busa/incsearch.vim"
 " Javascript
 Bundle "pangloss/vim-javascript"
 
+" Syntax checker
+Bundle "scrooloose/syntastic"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -131,3 +134,7 @@ set ic
 
 " Highlight the columns from 81 to 120
 execute 'set colorcolumn=' . join(range(81,120),',')
+
+" Syntastic config
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
