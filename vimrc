@@ -77,7 +77,10 @@ set autoindent
 set cindent
 set smartindent
 
+" Set no wrap
 set nowrap
+
+" Show absolute line number of the current line
 set number
 
 " Set tabs and spacing for PHP as recommended by PEAR and Zend
@@ -89,6 +92,9 @@ set shiftwidth=4
 " Show a status bar
 set ruler
 set laststatus=2
+
+" Scroll the window with 10 lines around
+set scrolloff=10
 
 " Disable the cursor/arrow keys
 inoremap  <Up>     <NOP>
