@@ -138,3 +138,6 @@ execute 'set colorcolumn=' . join(range(81,120),',')
 " Syntastic config
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" New line and indent key binding
+inoremap <C-Return> <CR><CR><C-o>k<Tab>
