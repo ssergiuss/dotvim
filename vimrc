@@ -25,9 +25,11 @@ Bundle "ctrlpvim/ctrlp.vim"
 " TAB for autocompletion
 Bundle "ervandew/supertab"
 
-" NERD bundles
+" Filesystem tree (with search capabilities) and code commenter
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/nerdcommenter"
+Bundle "mileszs/ack.vim"
+Bundle "vim-scripts/nerdtree-ack"
 
 " Autocompletion for quotes, parens, brackets, etc
 Bundle "Raimondi/delimitMate"
