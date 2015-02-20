@@ -49,6 +49,9 @@ Bundle "pangloss/vim-javascript"
 " Syntax checker
 Bundle "scrooloose/syntastic"
 
+" IndentLine
+Bundle "Yggdroot/indentLine"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -147,3 +150,6 @@ let g:syntastic_check_on_wq = 0
 
 " New line and indent key binding
 inoremap <C-Return> <CR><CR><C-o>k<Tab>
+
+" IndentLine config
+let g:indentLine_char = '│'
