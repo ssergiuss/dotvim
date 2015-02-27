@@ -86,7 +86,7 @@ set nowrap
 " Show absolute line number of the current line
 set number
 
-" Set tabs and spacing for PHP as recommended by PEAR and Zend
+" Set global tabs and spacing
 set expandtab
 set tabstop=4
 set softtabstop=4
@@ -122,6 +122,9 @@ map g/ <Plug>(incsearch-stay)
 
 " Remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Set tabs and spacing for Javascript
+autocmd FileType javascript set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 " Show lines that exceed 80 characters
 match ErrorMsg '\%>80v.\+'
