@@ -126,6 +126,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Set tabs and spacing for Javascript
 autocmd FileType javascript set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
+" Set tabs and spacing for HTML
+autocmd FileType html set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+
 " Show lines that exceed 80 characters
 match ErrorMsg '\%>80v.\+'
 
