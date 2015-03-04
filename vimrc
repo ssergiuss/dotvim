@@ -158,7 +158,7 @@ let g:syntastic_check_on_wq = 0
 inoremap <C-Return> <CR><CR><C-o>k<Tab>
 
 " IndentLine config
-let g:indentLine_char = '│'
+let g:indentLine_char = '‧'
 
 " Reload ~/.vimrc key binding
 noremap \rc :source ~/.vimrc<CR>
