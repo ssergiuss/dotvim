@@ -161,7 +161,7 @@ inoremap <C-Return> <CR><CR><C-o>k<Tab>
 let g:indentLine_char = '‧'
 
 " Reload ~/.vimrc key binding
-noremap \rc :source ~/.vimrc<CR>
+noremap <leader>rc :source ~/.vimrc<CR>
 
 " 81 characters vertical resize key binding
-noremap \vr <C-w>=<CR> :vertical resize 85<CR>
+noremap <leader>vr <C-w>=<CR> :vertical resize 85<CR>
