@@ -109,6 +109,9 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
+" Set the leader key
+let mapleader = ','
+
 " Disable working path mode. Keep the first root.
 let g:ctrlp_working_path_mode = 0
 
