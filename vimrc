@@ -133,7 +133,9 @@ autocmd FileType javascript set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 autocmd FileType html set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 " Show lines that exceed 80 characters
-match ErrorMsg '\%>80v.\+'
+if has('gui_running')
+    match ErrorMsg '\%>80v.\+'
+endif
 
 " Remove vertical scrollbars
 set guioptions-=l
@@ -150,8 +152,10 @@ map <C-l> <C-w>l
 " Set search case insensitive
 set ic
 
-" Highlight the columns from 81 to 120
-execute 'set colorcolumn=' . join(range(81,120),',')
+" Highlight the 81th column and the columns greater than 120th
+if has('gui_running')
+    let &colorcolumn='81,'.join(range(121,999),',')
+endif
 
 " Syntastic config
 let g:syntastic_check_on_open = 1
