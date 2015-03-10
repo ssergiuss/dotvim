@@ -157,9 +157,6 @@ execute 'set colorcolumn=' . join(range(81,120),',')
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" New line and indent key binding
-inoremap <C-Return> <CR><CR><C-o>k<Tab>
-
 " IndentLine config
 let g:indentLine_char = '‧'
 
@@ -168,3 +165,9 @@ noremap <leader>rc :source ~/.vimrc<CR>
 
 " 81 characters vertical resize key binding
 noremap <leader>vr <C-w>=<CR> :vertical resize 85<CR>
+
+" Enable the expansion of <CR>
+let delimitMate_expand_cr = 2
+
+" Allow backspacing over autoindent, line breaks, the start of insert
+set backspace=indent,eol,start
