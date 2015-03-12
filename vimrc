@@ -175,3 +175,6 @@ let delimitMate_expand_cr = 2
 
 " Allow backspacing over autoindent, line breaks, the start of insert
 set backspace=indent,eol,start
+
+" Disable beeping and visual bell
+set vb t_vb=
