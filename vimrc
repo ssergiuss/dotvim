@@ -52,6 +52,9 @@ Bundle "scrooloose/syntastic"
 " IndentLine
 Bundle "Yggdroot/indentLine"
 
+" EditorConfig
+Bundle "editorconfig/editorconfig-vim"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
