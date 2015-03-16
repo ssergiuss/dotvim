@@ -55,6 +55,15 @@ Bundle "Yggdroot/indentLine"
 " EditorConfig
 Bundle "editorconfig/editorconfig-vim"
 
+" UltiSnips
+Bundle "SirVer/ultisnips"
+
+" UltiSnips PHP
+Bundle "ssergiuss/ultisnips-php"
+
+" Ultisnips Javascript
+Bundle "ssergiuss/ultisnips-javascript"
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
