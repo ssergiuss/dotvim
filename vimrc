@@ -1,71 +1,91 @@
 "
 " START VUNDLE CONFIGURATION
 "
-set nocompatible            " be iMproved, required
-filetype off                " required
+set nocompatible " be iMproved, required
+filetype off     " required
 
 " Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 "
-" Bundles
+" Plugins
 "
 
 " Themes and status/tabline
-Bundle "altercation/vim-colors-solarized"
-Bundle "bling/vim-airline"
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bling/vim-airline'
+Plugin 'evgenyzinoviev/vim-vendetta'
 
 " Full path fuzzy file finder
-Bundle "ctrlpvim/ctrlp.vim"
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " TAB for autocompletion
-Bundle "ervandew/supertab"
+Plugin 'ervandew/supertab'
 
 " Filesystem tree (with search capabilities) and code commenter
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/nerdcommenter"
-Bundle "mileszs/ack.vim"
-Bundle "vim-scripts/nerdtree-ack"
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/nerdtree-ack'
 
 " Autocompletion for quotes, parens, brackets, etc
-Bundle "Raimondi/delimitMate"
+Plugin 'Raimondi/delimitMate'
 
 " Git
-Bundle "tpope/vim-fugitive"
+Plugin 'tpope/vim-fugitive'
 
 " Numbers
-Bundle "myusuf3/numbers.vim"
+Plugin 'myusuf3/numbers.vim'
 
 " Improved incremental search
-Bundle "haya14busa/incsearch.vim"
+Plugin 'haya14busa/incsearch.vim'
 
 " Javascript
-Bundle "pangloss/vim-javascript"
+Plugin 'pangloss/vim-javascript'
 
 " Syntax checker
-Bundle "scrooloose/syntastic"
+Plugin 'scrooloose/syntastic'
 
 " IndentLine
-Bundle "Yggdroot/indentLine"
+Plugin 'Yggdroot/indentLine'
 
 " EditorConfig
-Bundle "editorconfig/editorconfig-vim"
+Plugin 'editorconfig/editorconfig-vim'
 
 " UltiSnips
-Bundle "SirVer/ultisnips"
+"Plugin 'SirVer/ultisnips'
 
 " UltiSnips PHP
-Bundle "ssergiuss/ultisnips-php"
+"Plugin 'ssergiuss/ultisnips-php'
 
 " Ultisnips Javascript
-Bundle "ssergiuss/ultisnips-javascript"
+"Plugin 'ssergiuss/ultisnips-javascript'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+" VIM Snippets
+Plugin 'honza/vim-snippets'
+
+" PHP omni-completion
+"Plugin 'shawncplus/phpcomplete.vim'
+
+" YouCompleteMe
+"Plugin 'valloric/youcompleteme'
+
+" PHP Documentor
+Plugin 'tobyS/pdv'
+
+" Mustache (required by PHP Documentor)
+Plugin 'tobyS/vmustache'
+
+" EasyAlign
+Plugin 'junegunn/vim-easy-align'
+
+" All the Plugins must be added before the following line
+call vundle#end()         " required
+filetype plugin indent on " required
 
 " Brief help
 " :PluginList       - lists configured plugins
@@ -83,9 +103,9 @@ filetype plugin indent on    " required
 syntax enable
 set background=dark
 
-if has('gui_running')
-    colorscheme solarized
-endif
+"if has('gui_running')
+    colorscheme vendetta
+"endif
 
 " Set auto-indent options
 set autoindent
@@ -110,6 +130,15 @@ set laststatus=2
 
 " Scroll the window with 10 lines around
 set scrolloff=10
+
+" Allow backspacing over autoindent, line breaks, the start of insert
+set backspace=indent,eol,start
+
+" Disable beeping and visual bell
+set vb t_vb=
+
+" Highlight all search matches
+set hlsearch
 
 " Disable the cursor/arrow keys
 inoremap  <Up>     <NOP>
@@ -136,17 +165,17 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " Remove trailing spaces
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " Set tabs and spacing for Javascript
-autocmd FileType javascript set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+"autocmd FileType javascript set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 " Set tabs and spacing for HTML
-autocmd FileType html set tabstop=2 | set softtabstop=2 | set shiftwidth=2
+"autocmd FileType html set tabstop=2 | set softtabstop=2 | set shiftwidth=2
 
 " Show lines that exceed 80 characters
 if has('gui_running')
-    match ErrorMsg '\%>80v.\+'
+    "match ErrorMsg '\%>80v.\+'
 endif
 
 " Remove vertical scrollbars
@@ -165,9 +194,10 @@ map <C-l> <C-w>l
 set ic
 
 " Highlight the 81th column and the columns greater than 120th
-if has('gui_running')
-    let &colorcolumn='81,'.join(range(121,999),',')
-endif
+"if has('gui_running')
+    "let &colorcolumn='81,'.join(range(121,999),',')
+    let &colorcolumn='81,121,122'
+"endif
 
 " Syntastic config
 let g:syntastic_check_on_open = 1
@@ -175,6 +205,8 @@ let g:syntastic_check_on_wq = 0
 
 " IndentLine config
 let g:indentLine_char = '‧'
+"let g:indentLine_char = '`'
+"let g:indentLine_char = '·'
 
 " Reload ~/.vimrc key binding
 noremap <leader>rc :source ~/.vimrc<CR>
@@ -182,11 +214,59 @@ noremap <leader>rc :source ~/.vimrc<CR>
 " 81 characters vertical resize key binding
 noremap <leader>vr <C-w>=<CR> :vertical resize 85<CR>
 
+" Vertical resize
+noremap <leader>v1 :vertical resize +10<CR>
+noremap <leader>v2 :vertical resize +20<CR>
+noremap <leader>v3 :vertical resize +30<CR>
+noremap <leader>v4 :vertical resize +40<CR>
+noremap <leader>v5 :vertical resize +50<CR>
+noremap <leader>v6 :vertical resize +60<CR>
+noremap <leader>v7 :vertical resize +70<CR>
+noremap <leader>v8 :vertical resize +80<CR>
+noremap <leader>v9 :vertical resize +90<CR>
+
 " Enable the expansion of <CR>
 let delimitMate_expand_cr = 2
 
-" Allow backspacing over autoindent, line breaks, the start of insert
-set backspace=indent,eol,start
+" Press Space to turn off highlighting and clear any message already displayed
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-" Disable beeping and visual bell
-set vb t_vb=
+" Reveal current file in tree
+noremap <leader>n :NERDTreeFind<CR>
+
+" Search for visually selected text
+vnoremap // y/<C-R>"<CR>
+
+" PHP Documentor
+let g:pdv_template_dir = $HOME .'/.vim/bundle/pdv/templates_snip'
+nnoremap <C-k> :call pdv#DocumentWithSnip()<CR>
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger='<C-s>'
+let g:UltiSnipsJumpForwardTrigger='<C-l>'
+let g:UltiSnipsJumpBackwardTrigger='<C-h>'
+
+" EasyAlign
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+"nmap ga <Plug>(EasyAlign)
+let g:easy_align_ignore_groups = ['String']
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_register_as_syntastic_checker = 0
+let g:ycm_seed_identifiers_with_syntax = 0
+
+" VIM Javascript
+let g:javascript_plugin_jsdoc = 1
+
+" Keep only the active tab and split
+noremap <C-w>O :tabo \| on<CR>
+
+" TODO update it so that it pushes only if necessary
+" Push changes to dev4 on file save
+"autocmd BufWritePost * execute ':silent ! /bin/bash /Users/sergiuungur/Projects/partfiniti/push > /dev/null 2>&1 &'
